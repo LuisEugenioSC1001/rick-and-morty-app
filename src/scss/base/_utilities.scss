@@ -1,0 +1,25 @@
+.u-text-center {
+  text-align: center;
+}
+.u-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.u-title {
+  padding: 10px 0;
+  font-family: "rick-font";
+  font-size: 2rem;
+  background: linear-gradient($primary-color, $secondary-color);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.u-subtitle {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  color: white;
+  font-weight: 700;
+}
+.u-pl-sm {
+  padding-left: 12px;
+}

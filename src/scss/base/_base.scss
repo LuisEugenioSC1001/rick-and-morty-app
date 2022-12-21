@@ -1,0 +1,28 @@
+@include scrollbars(10px, rgba(255, 255, 255, 0.15), transparent);
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+main {
+  padding: 1.5em 0;
+}
+:root {
+  --hue: 223;
+  --bg: hsl(var(--hue), 10%, 90%);
+  --fg: hsl(var(--hue), 10%, 10%);
+  font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+body {
+  background: hsl(var(--hue), 10%, 10%);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue), 10%, 10%);
+    --fg: hsl(var(--hue), 10%, 90%);
+  }
+}
