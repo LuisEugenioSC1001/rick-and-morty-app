@@ -69,3 +69,9 @@
   opacity: 0.8;
   transition: 0.5s;
 }
+
+@media screen and (max-width: 500px) {
+  .episode-card {
+    width: 90%;
+  }
+}
