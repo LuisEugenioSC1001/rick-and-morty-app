@@ -1,27 +1,47 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (url) => {
+const useFetch = ({
+  query,
+  variables = {},
+}: {
+  query: string;
+  variables?: any;
+}) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  useEffect(() => {
+  const refetch = () => {
     setLoading(true);
-    setData(null);
-    setError(null);
-    fetch(`https://rickandmortyapi.com/api/${url}`)
+    fetch(`https://rickandmortyapi.com/graphql`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: query,
+        variables: variables,
+      }),
+    })
       .then((response) => response.json())
       .then((res) => {
         setLoading(false);
-        setData(res);
+        setData(res?.data);
       })
       .catch((err) => {
         setLoading(false);
         setError("An error occurred. Awkward..");
       });
-  }, [url]);
+  };
 
-  return { data, loading, error };
+  useEffect(() => {
+    () => refetch();
+  }, [variables]);
+
+  useEffect(() => {
+    refetch();
+  }, []);
+
+  return { data, loading, error, refetch };
 };
 
 export default useFetch;
