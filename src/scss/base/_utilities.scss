@@ -3,17 +3,18 @@
 }
 .u-center {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
-.u-title {
+.u-title-container {
   padding: 10px 0;
-  font-family: "rick-font";
+  font-family: "rick-font", "Courier New", Courier, monospace;
   font-size: 2rem;
   background: linear-gradient($primary-color, $secondary-color);
   -webkit-background-clip: text;
   color: transparent;
 }
+
 .u-subtitle {
   font-family: "Courier New", Courier, monospace;
   font-size: 1rem;
@@ -22,4 +23,26 @@
 }
 .u-pl-sm {
   padding-left: 12px;
+}
+
+.u-container {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.u-pt-md {
+  padding-top: 50px;
+}
+
+.u-title:hover {
+  cursor: pointer;
+  color: $secondary-color;
+  transition: all 1s ease-out;
 }

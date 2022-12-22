@@ -1,0 +1,27 @@
+.character_card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 12rem;
+}
+.card-image {
+  border-radius: 12px;
+  margin: 10px 10px;
+  width: 90%;
+}
+
+.character_card:hover {
+  cursor: pointer;
+  background-color: $primary-color;
+  transition: 0.5s;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 500px) {
+  .character_card {
+    width: 90%;
+  }
+}
